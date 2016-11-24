@@ -5,6 +5,7 @@ services: [docker]
 env:
   matrix:
     - REPO=https://github.com/nextcloud/nextcloud-snap
+    - REPO=https://github.com/RocketChat/Rocket.Chat/
 
 script:
   - git clone https://github.com/elopio/snapcraft
