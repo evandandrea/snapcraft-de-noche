@@ -1,0 +1,13 @@
+sudo: required
+
+services: [docker]
+
+env:
+  matrix:
+    - REPO=https://github.com/nextcloud/nextcloud-snap
+
+script:
+  - git clone https://github.com/elopio/snapcraft
+  - cd snapcraft
+  - git checkout build_external_snaps
+  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO
