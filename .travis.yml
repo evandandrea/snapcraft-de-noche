@@ -9,6 +9,7 @@ env:
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
     - REPO=https://github.com/magne4000/quassel-webserver
+    - REPO=https://github.com/conjure-up/conjure-up
 
 script:
   - git clone https://github.com/elopio/snapcraft
