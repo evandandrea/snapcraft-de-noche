@@ -8,6 +8,7 @@ env:
     - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
+    - REPO=https://github.com/magne4000/quassel-webserver
 
 script:
   - git clone https://github.com/elopio/snapcraft
