@@ -6,6 +6,7 @@ env:
   matrix:
     - REPO=https://github.com/nextcloud/nextcloud-snap
     - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
+    - REPO=https://github.com/maas/meta-maas
 
 script:
   - git clone https://github.com/elopio/snapcraft
