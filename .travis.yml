@@ -12,9 +12,10 @@ env:
     - REPO=https://github.com/conjure-up/conjure-up
     - REPO=https://github.com/getnikola/nikola/
     - REPO=https://github.com/kyrofa/darktable-snap
+    - REPO=https://github.com/lxc/lxd-pkg-ubuntu REPO_BRANCH=snappy-16
 
 script:
   - git clone https://github.com/elopio/snapcraft
   - cd snapcraft
   - git checkout build_external_snaps
-  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO
+  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH
