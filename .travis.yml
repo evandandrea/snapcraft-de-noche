@@ -15,7 +15,6 @@ env:
     - REPO=https://github.com/lxc/lxd-pkg-ubuntu REPO_BRANCH=snappy-16
 
 script:
-  - git clone https://github.com/elopio/snapcraft
+  - git clone https://github.com/snapcore/snapcraft
   - cd snapcraft
-  - git checkout build_external_snaps
   - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH
