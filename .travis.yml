@@ -13,8 +13,9 @@ env:
     - REPO=https://github.com/getnikola/nikola/
     - REPO=https://github.com/kyrofa/darktable-snap
     - REPO=https://github.com/lxc/lxd-pkg-ubuntu REPO_BRANCH=snappy-16
+    - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
 
 script:
   - git clone https://github.com/snapcore/snapcraft
   - cd snapcraft
-  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH
+  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA
