@@ -4,7 +4,8 @@ services: [docker]
 
 env:
   matrix:
-    - REPO=https://github.com/nextcloud/nextcloud-snap
+    - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=master
+    - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=develop
     - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
