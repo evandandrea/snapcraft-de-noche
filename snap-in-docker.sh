@@ -14,4 +14,4 @@ repo="$1"
 repo_branch="$2"
 ppa="$3"
 
-docker run -v "$(pwd)":/snapcraft -v "$TRAVIS_BUILD_DIR":/build ubuntu:xenial sh -c "apt update && apt install locales -y && locale-gen en_US.UTF-8 && export LC_ALL=en_US.UTF-8 && cd /snapcraft && /build/snap.sh $repo $repo_branch $ppa"
+docker run -v "$(pwd)":/snapcraft -v "$TRAVIS_BUILD_DIR":/build ubuntu:xenial sh -c "apt update && apt install locales -y && locale-gen en_US.UTF-8 && export LC_ALL=en_US.UTF-8 && cd /snapcraft && apt build-dep -y ./ && /build/snap.sh $repo $repo_branch $ppa"
