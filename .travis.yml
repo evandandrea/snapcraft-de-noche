@@ -19,6 +19,7 @@ env:
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
     - REPO=lp:pc-kernel-snap
     - REPO=lp:dragonboard-kernel-snap
+    - REPO=lp:pi2-kernel-snap
 
 script:
   - git clone https://github.com/elopio/snapcraft
