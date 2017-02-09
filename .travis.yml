@@ -21,6 +21,7 @@ env:
     - REPO=lp:dragonboard-kernel-snap
     - REPO=lp:pi2-kernel-snap
     - REPO=git://kernel.ubuntu.com/ubuntu/ubuntu-xenial.git
+    - REPO=git://kernel.ubuntu.com/ubuntu/ubuntu-xenial.git REPO_BRANCH=snapdragon
 
 script:
   - git clone https://github.com/elopio/snapcraft
