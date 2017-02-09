@@ -4,11 +4,24 @@ services: [docker]
 
 env:
   matrix:
+
     - REPO=https://github.com/nextcloud/nextcloud-snap
+    - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=master
+    - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=develop
+    - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
+    - REPO=https://github.com/maas/meta-maas
+    - REPO=https://github.com/docker-snap/docker
+    - REPO=https://github.com/magne4000/quassel-webserver
+    - REPO=https://github.com/conjure-up/conjure-up
+    - REPO=https://github.com/getnikola/nikola/
+    - REPO=https://github.com/kyrofa/darktable-snap
+    - REPO=https://github.com/lxc/lxd-pkg-ubuntu REPO_BRANCH=snappy-16
+    - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
+    - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
+    - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
     - REPO=https://github.com/RocketChat/Rocket.Chat/
 
 script:
-  - git clone https://github.com/elopio/snapcraft
+  - git clone https://github.com/snapcore/snapcraft
   - cd snapcraft
-  - git checkout build_external_snaps
-  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO
+  - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA

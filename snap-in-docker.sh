@@ -3,10 +3,15 @@
 # Build a snap using a docker container.
 #
 # Arguments:
-#   repo: The URL of the repository to build.
+#   repo:        The URL of the repository to build.
+#   repo-branch: (optional) The branch of the repository to build. If it is not
+#                passed, the default branch will be built.
+#   PPA:         (optional) A PPA with build requirements for the snap.
 
 set -ev
 
 repo="$1"
+repo_branch="$2"
+ppa="$3"
 
-docker run -v "$(pwd)":/cwd ubuntu:xenial sh -c "apt update && apt install git python3 python3-docopt snapcraft -y && cd /cwd && python3 -m external_snaps_tests $repo"
+docker run -v "$(pwd)":/snapcraft -v "$TRAVIS_BUILD_DIR":/build ubuntu:xenial sh -c "apt update && apt install locales -y && locale-gen en_US.UTF-8 && export LC_ALL=en_US.UTF-8 && cd /snapcraft && apt build-dep -y ./ && /build/snap.sh $repo $repo_branch $ppa"
