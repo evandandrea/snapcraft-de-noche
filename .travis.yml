@@ -6,7 +6,7 @@ env:
   matrix:
     - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=master
     - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=develop
-    - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
+    - REPO=https://git.launchpad.net/checkbox-snappy
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
     - REPO=https://github.com/magne4000/quassel-webserver
