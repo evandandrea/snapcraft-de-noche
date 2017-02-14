@@ -17,8 +17,12 @@ env:
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
+    - REPO=lp:pc-kernel-snap
+    - REPO=lp:dragonboard-kernel-snap
+    - REPO=lp:pi2-kernel-snap
 
 script:
-  - git clone https://github.com/snapcore/snapcraft
+  - git clone https://github.com/elopio/snapcraft
   - cd snapcraft
+  - git checkout external_bzr
   - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA

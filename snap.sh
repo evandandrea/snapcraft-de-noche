@@ -21,6 +21,6 @@ if [ ! -z "$3" ]; then
 fi
 
 apt update
-apt install git python3 python3-docopt snapcraft -y
+apt install bzr git python3 python3-docopt snapcraft -y
 
 python3 -m external_snaps_tests $repo $repo_branch
