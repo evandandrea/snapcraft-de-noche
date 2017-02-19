@@ -19,9 +19,20 @@ env:
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
     # Custom plugins and zulu-jre.
     - REPO=https://github.com/openhab/openhab-snap
+    # Official kernel snaps.
     - REPO=lp:pc-kernel-snap
     - REPO=lp:dragonboard-kernel-snap
     - REPO=lp:pi2-kernel-snap
+    # System enablement snaps.
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/network-manager
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/modem-manager
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/bluez
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/alsa-utils
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/wifi-ap
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/upower
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/tpm
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/tpm2
+    - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/pulseaudio
 
 script:
   - git clone https://github.com/elopio/snapcraft
