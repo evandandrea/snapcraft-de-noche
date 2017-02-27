@@ -33,6 +33,8 @@ env:
     - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/tpm
     - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/tpm2
     - REPO=https://git.launchpad.net/~morphis/snappy-hwe-snaps/+git/pulseaudio
+    # Classic confinement and install scriplet.
+    - REPO=https://github.com/juju/juju/ REPO_BRANCH=develop
 
 script:
   - git clone https://github.com/elopio/snapcraft
