@@ -6,7 +6,7 @@ env:
   matrix:
     - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=master
     - REPO=https://github.com/nextcloud/nextcloud-snap REPO_BRANCH=develop
-    - REPO=https://git.launchpad.net/~checkbox-dev/plainbox-provider-snappy/+git/packaging
+    - REPO=https://git.launchpad.net/checkbox-snappy
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
     - REPO=https://github.com/magne4000/quassel-webserver
@@ -17,12 +17,26 @@ env:
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
+    # Custom plugins and zulu-jre.
+    - REPO=https://github.com/openhab/openhab-snap
+    # Official kernel snaps.
     - REPO=lp:pc-kernel-snap
     - REPO=lp:dragonboard-kernel-snap
     - REPO=lp:pi2-kernel-snap
+    # Kernel team snaps
     - REPO=git://kernel.ubuntu.com/ubuntu/ubuntu-xenial.git
     - REPO=git://kernel.ubuntu.com/ubuntu/ubuntu-xenial.git REPO_BRANCH=snapdragon
     - REPO=git://kernel.ubuntu.com/ubuntu/ubuntu-xenial.git REPO_BRANCH=raspi2
+    # System enablement snaps.
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/network-manager
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/modem-manager
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/bluez
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/alsa-utils
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/wifi-ap
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/upower
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/tpm
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/tpm2
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/pulseaudio
 
 script:
   - git clone https://github.com/elopio/snapcraft

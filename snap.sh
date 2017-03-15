@@ -23,4 +23,5 @@ fi
 apt update
 apt install bzr git python3 python3-docopt snapcraft -y
 
+export SNAPCRAFT_SETUP_CORE=1
 python3 -m external_snaps_tests $repo $repo_branch
