@@ -41,8 +41,6 @@ script:
 
 after_failure:
   # Run again, using the latest snapcraft tag, to see if it's a regression.
-  - git clone https://github.com/snapcore/snapcraft
-  - cd snapcraft
   - last_committed_tag="$(git describe --tags --abbrev=0)"
   - git checkout ${last_committed_tag}
   - echo Building with snapcraft ${last_committed_tag} ...
