@@ -17,6 +17,13 @@ env:
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
+    # Openstack snaps.
+    - REPO=https://github.com/openstack/snap-glance.git
+    - REPO=https://github.com/openstack/snap-keystone.git
+    - REPO=https://github.com/openstack/snap-neutron.git
+    - REPO=https://github.com/openstack/snap-nova.git
+    - REPO=https://github.com/openstack/snap-nova-hypervisor
+    - REPO=https://github.com/openstack/snap-ceilometer.git
     # Custom plugins and zulu-jre.
     - REPO=https://github.com/openhab/openhab-snap
     # Official kernel snaps.
