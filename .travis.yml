@@ -35,8 +35,9 @@ env:
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/pulseaudio
 
 script:
-  - git clone https://github.com/snapcore/snapcraft
+  - git clone https://github.com/elopio/snapcraft
   - cd snapcraft
+  - git checkout bug/1691580/virtual_build_dep
   - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA
 
 after_failure:
