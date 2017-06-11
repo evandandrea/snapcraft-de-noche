@@ -17,6 +17,7 @@ env:
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
+    - REPO=https://github.com/heroku/cli
     # Custom plugins and zulu-jre.
     - REPO=https://github.com/openhab/openhab-snap
     # Official kernel snaps.
