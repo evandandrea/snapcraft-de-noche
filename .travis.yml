@@ -13,6 +13,7 @@ env:
     - REPO=https://github.com/conjure-up/conjure-up
     - REPO=https://github.com/getnikola/nikola/
     - REPO=https://github.com/kyrofa/darktable-snap
+    - REPO=https://github.com/kyrofa/ros-lunar-snap
     - REPO=https://github.com/lxc/lxd-pkg-ubuntu REPO_BRANCH=snappy-16
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
