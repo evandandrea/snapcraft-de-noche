@@ -41,7 +41,7 @@ script:
   - cd snapcraft
   - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA
   - sudo apt install snapd
-  - sudo chmod 777 $TRAVIS_BUILD_DIR$/snapcraft* && ls $TRAVIS_BUILD_DIR/snapcraft*/ && sudo snap install $TRAVIS_BUILD_DIR/snapcraft*/*.snap --dangerous
+  - sudo chmod 777 $TRAVIS_BUILD_DIR/snapcraft* && ls $TRAVIS_BUILD_DIR/snapcraft*/ && sudo snap install $TRAVIS_BUILD_DIR/snapcraft*/*.snap --dangerous
 
 after_failure:
   # Run again, using the latest snapcraft tag, to see if it's a regression.
