@@ -10,7 +10,7 @@ env:
     - REPO=https://github.com/maas/meta-maas
     - REPO=https://github.com/docker-snap/docker
     - REPO=https://github.com/magne4000/quassel-webserver
-    - REPO=https://github.com/conjure-up/conjure-up
+    - REPO=https://github.com/conjure-up/conjure-up INSTALL_ARGS=--classic
     - REPO=https://github.com/getnikola/nikola/
     - REPO=https://github.com/kyrofa/darktable-snap
     - REPO=https://github.com/kyrofa/ros-lunar-snap
@@ -18,15 +18,15 @@ env:
     - REPO=https://github.com/elopio/hashicorp-snaps REPO_BRANCH=master PPA=ppa:gophers/archive
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=5.7
     - REPO=https://github.com/mysql/mysql-snap REPO_BRANCH=8.0
-    - REPO=https://github.com/anbox/anbox/
+    - REPO=https://github.com/anbox/anbox/ INSTALL_ARGS=--devmode
     # Custom plugins and zulu-jre.
-    - REPO=https://github.com/openhab/openhab-snap
+    - REPO=https://github.com/openhab/openhab-snap SKIP_INSTALL=1  # Fails configure hook.
     # Official kernel snaps.
-    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=pc
-    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=raspi2
-    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=snapdragon
+    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=pc SKIP_INSTALL=1
+    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=raspi2 SKIP_INSTALL=1
+    - REPO=https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-snap/+git/xenial REPO_BRANCH=snapdragon SKIP_INSTALL=1
     # System enablement snaps.
-    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/network-manager
+    - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/network-manager SKIP_INSTALL=1  # Fails configure hook.
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/modem-manager
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/bluez
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/alsa-utils
@@ -41,7 +41,7 @@ script:
   - cd snapcraft
   - $TRAVIS_BUILD_DIR/snap-in-docker.sh $REPO $REPO_BRANCH $PPA
   - sudo apt install snapd
-  - sudo chmod 777 $TRAVIS_BUILD_DIR/snapcraft* && ls $TRAVIS_BUILD_DIR/snapcraft*/ && sudo snap install $TRAVIS_BUILD_DIR/snapcraft*/*.snap --dangerous
+  - if [ -z $SKIP_INSTALL ]; then sudo chmod 777 $TRAVIS_BUILD_DIR/snapcraft* && sudo snap install $TRAVIS_BUILD_DIR/snapcraft*/*.snap --dangerous $INSTALL_ARGS; fi
 
 after_failure:
   # Run again, using the latest snapcraft tag, to see if it's a regression.
