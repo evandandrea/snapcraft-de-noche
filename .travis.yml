@@ -35,6 +35,7 @@ env:
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/tpm
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/tpm2
     - REPO=https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/pulseaudio
+    - REPO=https://github.com/heroku/cli
 
 script:
   - git clone https://github.com/snapcore/snapcraft
